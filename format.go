@@ -9,6 +9,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/davecgh/go-spew/spew"
 )
 
 const (
@@ -227,7 +229,7 @@ func formatLogfmtValue(value interface{}) string {
 	case string:
 		return escapeString(v)
 	default:
-		return escapeString(fmt.Sprintf("%+v", value))
+		return escapeString(spew.Sprintf("%+v", value))
 	}
 }
 
